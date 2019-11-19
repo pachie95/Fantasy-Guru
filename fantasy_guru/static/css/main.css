@@ -1,0 +1,56 @@
+/* background image */ 
+.image{
+     background-position: center;
+     background-size: cover;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+
+}
+/* nav styling */
+.nav-link{
+     color: white
+}
+
+/* fantasy help css */
+.header-text{
+     color: white;
+}
+
+#header{
+     color: white;
+}
+
+.results{
+     color: white;
+}
+
+
+/* Register site */
+.register{
+     color: white;
+}
+
+.form-control{
+     width: 350px;
+}
+
+/* Login site */
+.login{
+     color: white;
+}
+
+.labels{
+     color: white;
+}
+
+
+/* post */
+#content{
+     height: 100px;
+}
+
+/* home page */
+.main-header{
+     color: white;
+}

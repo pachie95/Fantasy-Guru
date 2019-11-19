@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="banner">
+    <h1 class="header-text">Welcome to our User Discussion Board!</h1>
+</div>
+
+<!--Where a new user can create an account-->
+</div class="container">
+    <h1 class="register">Register Here:</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+    <ul>
+
+    </ul>
+        {% endif %}
+    {% endwith %}
+    <form action="" method="POST">
+        {{ register_form.hidden_tag() }}
+        <div class="container">
+            <fieldset>
+                {{ register_form.username.label(class="labels")}}
+                {{ register_form.username(class="form-control")}}
+            </fieldset>
+            <fieldset>
+                {{ register_form.email.label(class="labels") }}
+                {{ register_form.email(class="form-control")}}
+            </fieldset>
+            <fieldset>
+                {{ register_form.password.label(class="labels") }}
+                {{ register_form.password(class="form-control")}}
+            </fieldset>
+            <fieldset>
+                {{ register_form.confirm_pass.label(class="labels") }}
+                {{ register_form.confirm_pass(class="form-control")}}
+            </fieldset>
+            {{register_form.submit(class="btn btn-primary")}}
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}

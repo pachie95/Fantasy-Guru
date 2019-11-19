@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Users will be able to see previous posts by other users if signed in-->
+{% if current_user.is_authenticated %}
+
+    {% for post in posts %}
+
+        <h2><a href="{{url_for('post_detail', post_id = post.id) }}">{{post.title}}</a></h2>
+        <p>{{post.content}}</p>
+
+    {% endfor %}
+
+    {% else %}
+
+{% endif %}
+
+<!--Users will be able to make a post-->
+<div class="container">
+    <div class="form-group">
+    <form action="" method="POST">
+        <fieldset>
+            {{ post_form.title.label(class="labels") }}
+            {{ post_form.title(class="form-control")}}
+        </fieldset>
+        <fieldset>
+            {{ post_form.content.label(class="labels") }}
+            {{ post_form.content(class="form-control", id="content")}}
+        </fieldset>
+        {{ post_form.submit(class="btn btn-primary")}}
+    </form>
+    </div>
+
+
+</div> 
+
+<!--Here lies Post HTML Content-->
+<header class="banner">
+    <h1 class="header-text">Previously submitted posts here below</h1>
+
+</header>
+
+
+{% if current_user.is_authenticated %}
+
+    {% for post in posts %}
+
+        <h2><a href="{{url_for('post_detail', post_id = post.id) }}">{{post.title}}</a></h2>
+        <p>{{post.content}}</p>
+
+    {% endfor %}
+
+    {% else %}
+    <h1>Nothing to show here...</h1>
+
+{% endif %}
+
+
+
+{% endblock content %}

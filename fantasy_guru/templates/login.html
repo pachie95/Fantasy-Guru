@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Where an existing user can login-->
+
+<div class="container"
+>
+    <h1 class="login">Login</h1>
+
+    <div class="form=group">
+        <form action="" method="post">
+            <fieldset>
+                {{login_form.email.label(class="labels")}}
+                {{login_form.email(class="form-control")}}
+
+            </fieldset>
+            <fieldset>
+                {{login_form.password.label(class="labels")}}
+                {{login_form.password(class="form-control")}}
+            </fieldset>
+            {{ login_form.submit(class="btn btn-primary")}}
+        </form>
+
+    </div>
+
+</div>
+
+
+
+{% endblock content %}

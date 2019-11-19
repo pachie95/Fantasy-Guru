@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--Content for Home HTML which will include the base and if logged in the posts-->
+
+<header class="banner">
+    <h1 class="header-text">Welcome to the world of a Fantasy Pro!</h1>
+</header>
+
+<!--Users will be able to compare and contrast specific players to see who they should start-->
+
+    <!--Title above inputs-->
+    <h5 class="container" id="header">Select your players to get expert Start / Sit advice! </h5>
+
+
+    <div class="container">
+        <form action="", method="POST">
+                {{ fantasy_form.hidden_tag() }}
+            <div class="row">
+                <div class="col">
+                    {{ fantasy_form.dropdown_list(placeholder="Select Week", class="form-control") }}
+                </div>
+                <div class="col">
+                    {{ fantasy_form.first_player(placeholder="Enter Your First Player", class="form-control") }}
+                </div>
+                <div class="col">
+                    {{ fantasy_form.second_player(placeholder="Enter Your Second Player", class="form-control") }}
+                </div>
+            </div>
+            {{ fantasy_form.submit(class="btn btn-primary")}}
+        </form>
+
+        {% if results1 and results2 %}
+        
+        <div class="results">    
+        
+        <h1>{{ results1|safe }}</h1>     
+        <h1>{{ results2|safe }}</h1>
+
+        </div>
+
+
+       
+
+        {% else %}
+
+        {% endif %}
+    </div> 
+
+
+
+
+
+
+
+{% endblock content %}
